@@ -3,51 +3,85 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Home</title>
+    <title>10conto</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
     <script src='main.js'></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
-      rel="stylesheet"
-    />
-
-    <script
-      src="https://kit.fontawesome.com/e7b202391b.js"
-      crossorigin="anonymous"
-    ></script>
 </head>
-
-
 <body>
     <header class="banner">
         <div class="bannercontent">
-          <h1>10 Conto</h1>
-          <p>Aqui você encontra as melhores roupas do mercado pelo melhores preços</p>
-          <nav class="headernavigation"> 
-              <div class="dropdown">
-                <a href="#" class="droplist">Catalago</a>
-                <div class="dropdowncontent">
-                  <a href="#camisas">Camisas</a>
-                  <a href="#calças">Calças</a>
-                  <a href="#bermudas">Bermudas</a>
-                  <a href="#blusas">Blusas</a>
-                  <a href="">Carrinho</a>
+            <h1>10 Conto</h1>
+            <p>Aqui você encontra as melhores roupas do mercado pelos melhores preços</p>
+            <nav class="headernavigation"> 
+                <div class="dropdown">
+                    <a href="#" class="droplist">Catálogo</a>
+                    <div class="dropdowncontent">
+                        <a href="#camisas">Camisas</a>
+                        <a href="#calças">Calças</a>
+                        <a href="#bermudas">Bermudas</a>
+                        <a href="#blusas">Blusas</a>
+                        <a href="#">Carrinho</a>
+                    </div>
                 </div>
-              </div>
-          </nav>
+            </nav>
         </div>
     </header>
 
-    <main>
+    <section id="camisas" class="section">
         <h2>Camisas</h2>
-        <section id="Camisas" class="categoria">
-            <div class="produto">
-              <img
-                src="data:image/jpeg;base64,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"
-                alt="Camisa davi Jones"
-              />
-    </main>
+        <div class="product" id="product-container">
+            <img src="https://via.placeholder.com/200x200" alt="Camisa Básica">
+            <h3>Camisa Básica</h3>
+            <p>R$ 10,00</p>
+        </div>
+        <div class="product" id="product-container">
+            <img src="https://via.placeholder.com/200x200" alt="Camisa Estampada">
+            <h3>Camisa Estampada</h3>
+            <p>R$ 10,00</p>
+        </div>
+    </section>
+
+    <section id="calças" class="section">
+        <h2>Calças</h2>
+        <div class="product" id="product-container">
+            <img src="https://via.placeholder.com/200x200" alt="Calça Jeans">
+            <h3>Calça Jeans</h3>
+            <p>R$ 10,00</p>
+        </div>
+        <div class="product" id="product-container">
+            <img src="https://via.placeholder.com/200x200" alt="Calça Moletom">
+            <h3>Calça Moletom</h3>
+            <p>R$ 10,00</p>
+        </div>
+    </section>
+
+    <section id="bermudas" class="section">
+        <h2>Bermudas</h2>
+        <div class="product" id="product-container">
+            <img src="https://via.placeholder.com/200x200" alt="Bermuda Jeans">
+            <h3>Bermuda Jeans</h3>
+            <p>R$ 10,00</p>
+        </div>
+        <div class="product" id="product-container">
+            <img src="https://via.placeholder.com/200x200" alt="Bermuda Esportiva">
+            <h3>Bermuda Esportiva</h3>
+            <p>R$ 10,00</p>
+        </div>
+    </section>
+
+    <section id="blusas" class="section">
+        <h2>Blusas</h2>
+        <div class="product" id="product-container">
+            <img src="https://via.placeholder.com/200x200" alt="Blusa Feminina">
+            <h3>Blusa Feminina</h3>
+            <p>R$ 10,00</p>
+        </div>
+        <div class="product" id="product-container">
+            <img src="https://via.placeholder.com/200x200" alt="Blusa de Frio">
+            <h3>Blusa de Frio</h3>
+            <p>R$ 10,00</p>
+        </div>
+    </section>
 </body>
 </html>
