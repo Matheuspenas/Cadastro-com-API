@@ -121,3 +121,29 @@ button#Salvar {
 button#Salvar:hover {
     background-color: #444;
 }
+
+/* Seção Sobre */
+.sobre {
+    max-width: 700px;
+    margin: 40px auto 60px;
+    padding: 25px 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.sobre__texto h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #222;
+    text-align: center;
+}
+
+/* Garantir boa leitura para o texto dentro de <p> */
+.sobre__texto p {
+    text-align: justify;
+    white-space: pre-line;
+}
