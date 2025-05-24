@@ -6,7 +6,6 @@
     <title>Login</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='./css/style.css'>
-    <script src='main.js'></script>
 </head>
 <body>
     <header class="banner">
@@ -21,72 +20,43 @@
     </header>
     <form>
         <h1>Cadraste seus dados</h1>
-          <div class="cada_nome">
+        <div class="cada_nome">
             <label for="cadas_nome">nome</label>
             <input
-              type="text"
-              id="LoginNome"
-              name="nome"
-              placeholder="Digite seu Email"
-              required
+            type="text"
+            id="LoginNome"
+            name="nome"
+            placeholder="Digite seu Email"
+            required
             />
-          </div>
-          <div class="cada_email">
+        </div>
+        <div class="cada_email">
             <label for="cadas_senha">Email</label>
             <input
-              type="text"
-              id="LoginEmail"
-              name="Email"
-              placeholder="Digite seu email"
-              required
+            type="text"
+            id="LoginEmail"
+            name="Email"
+            placeholder="Digite seu email"
+            required
             />
-          </div>
-          <div class="cada_cpf">
-            <label for="cadas_cpf">Cpf</label>
-            <input
-              type="text"
-              id="LoginCpf"
-              name="Cpf"
-              placeholder="000.000.000-00"
-              required
-            />
-          </div>
-          <div class="cada_Enderoco">
-            <label for="cadas_Endereco">Rua</label>
-            <input
-              type="text"
-              id="LoginEndereco"
-              name="Rua"
-              placeholder="Rua..."
-              required
-            />
-            <label for="cadas_Endereco">Cep</label>
-            <input
-              type="text"
-              id="LoginEndereco"
-              name="CEP"
-              placeholder="000000"
-              required
-            />
-            <label for="cadas_Endereco">Bairro</label>
-            <input
-              type="text"
-              id="LoginEndereco"
-              name="Bairro"
-              placeholder="Bairro Dona Joca"
-              required
-            />
-            <label for="cadas_Endereco">Cidade</label>
-            <input
-              type="text"
-              id="LoginEndereco"
-              name="Cidade"
-              placeholder="São tal"
-              required
-            />
-          </div>
-          <button id="Salvar" type="submit">Entrar</button>
-        </section>
-    </form>
+        </div>
+        <label>Cep:
+            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                   onblur="pesquisacep(this.value);" /></label><br />
+            <label>Rua:
+            <input name="rua" type="text" id="rua" size="60" /></label><br />
+            <label>Bairro:
+            <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+            <label>Cidade:
+            <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+            <label>Estado:
+            <input name="uf" type="text" id="uf" size="2" /></label><br />
+            <label>IBGE:
+            <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+        </label>
+        <button id="Salvar" type="submit">Entrar</button>
+    </section>
+</form>
+<script src='./java/main.js'></script>
 </body>
 </html>

@@ -1,28 +1,37 @@
+/* Define a fonte padrão do site e remove margens do body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
 }
 
-header h1{
+/* Deixa o título do cabeçalho com cor branca */
+header h1 {
     color: white;
 }
 
+/* Estiliza o banner principal com fundo escuro, cor do texto branca e centralização */
 .banner {
     background-color: #222;
     color: white;
     padding: 20px;
     text-align: center;
 }
+
+/* Estiliza a navegação em dropdown (menu suspenso) */
 .headernavigation .dropdown {
     position: relative;
     display: inline-block;
 }
+
+/* Estiliza os links principais do dropdown */
 .droplist {
     color: white;
     padding: 10px;
     text-decoration: none;
     display: inline-block;
 }
+
+/* Estiliza o conteúdo do dropdown, que aparece ao passar o mouse */
 .dropdowncontent {
     display: none;
     position: absolute;
@@ -32,23 +41,32 @@ header h1{
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
 }
 
-a{
+/* Estilo geral para todos os links */
+a {
     color: white;
     text-decoration: none;
+    justify-content: space-between; /* ⚠️ Este não tem efeito aqui, pois <a> não é um container flex */
 }
 
+/* Estiliza os links dentro do dropdown */
 .dropdowncontent a {
     color: black;
     padding: 10px;
     text-decoration: none;
     display: block;
 }
+
+/* Exibe o conteúdo do dropdown quando o mouse passa por cima */
 .dropdown:hover .dropdowncontent {
     display: block;
 }
+
+/* Padding para as seções gerais da página */
 .section {
     padding: 20px;
 }
+
+/* Estiliza cada produto no catálogo */
 .product {
     border: 1px solid #ddd;
     padding: 10px;
@@ -57,45 +75,52 @@ a{
     width: 200px;
     text-align: center;
 }
+
+/* Garante que a imagem do produto ocupe toda a largura do bloco */
 .product img {
     width: 100%;
     height: auto;
 }
 
+/* Centraliza os produtos e permite quebra de linha */
 .product-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-/* Estilo para o formulário de cadastro */
+/* Estiliza o formulário de cadastro */
 form {
-    max-width: 350px;  
-    margin: 40px auto;
-    padding: 15px;     
+    max-width: 350px;  /* largura máxima do formulário */
+    margin: 40px auto; /* centraliza o formulário na tela */
+    padding: 15px;     /* espaço interno */
     border: 1px solid #ddd;
     background-color: #f9f9f9;
-    border-radius: 8px;
+    border-radius: 8px; /* cantos arredondados */
 }
 
+/* Centraliza o h1 e muda a cor */
 h1 {
     text-align: center;
     color: #333;
 }
 
+/* Define estilo comum para os blocos de entrada de dados do formulário */
 div[class^="cada_"] {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
 
+/* Estiliza os rótulos dos campos do formulário */
 label {
     margin-bottom: 5px;
     font-weight: bold;
     color: #333;
 }
 
-input[type="text"] {
+/* Estiliza os campos de texto */
+input[type="text"] ,input[type="number"] {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -103,10 +128,12 @@ input[type="text"] {
     outline: none;
 }
 
+/* Adiciona uma borda mais escura quando o campo está em foco */
 input[type="text"]:focus {
     border-color: #555;
 }
 
+/* Estilo do botão de envio do formulário */
 button#Salvar {
     background-color: #222;
     color: white;
@@ -118,23 +145,25 @@ button#Salvar {
     width: 100%;
 }
 
+/* Efeito de hover no botão */
 button#Salvar:hover {
     background-color: #444;
 }
 
-/* Seção Sobre */
+/* Estilização da seção "Sobre" */
 .sobre {
     max-width: 700px;
     margin: 40px auto 60px;
     padding: 25px 30px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /* sombra suave */
     color: #444;
     font-size: 1.1rem;
     line-height: 1.6;
 }
 
+/* Estilo do título da seção "Sobre" */
 .sobre__texto h2 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -142,7 +171,7 @@ button#Salvar:hover {
     text-align: center;
 }
 
-/* Garantir boa leitura para o texto dentro de <p> */
+/* Parágrafo justificado e quebra automática de linha */
 .sobre__texto p {
     text-align: justify;
     white-space: pre-line;
