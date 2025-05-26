@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>carrinho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/style.css"
+    />
+  </head>
+  <body>
+    <header class="banner">
+      <div class="bannercontent">
+        <h1>10 Conto</h1>
+        <p>
+          Aqui você encontra as melhores roupas do mercado pelos melhores preços
+        </p>
+        <nav class="headernavigation">
+          <a href="./index.html">Pagina Inicial</a>
+          <a href="/sobre.html">Sobre Nos</a>
+          <a href="/login.html">Registro</a>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <h2>Itens Selecionados</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total">Total: R$ <span id="total">0.00</span></div>
+      <button class="checkout-btn">Finalizar Compra</button>
+    </div>
+
+    <!-- script DO CARRINHO  -->
+    <script>
+      const cartItemsContainer = document.getElementById("cart-items");
+      const totalElement = document.getElementById("total");
+      const finalizarBtn = document.querySelector(".checkout-btn");
+
+      function carregarCarrinho() {
+        return JSON.parse(localStorage.getItem("carrinho")) || [];
+      }
+
+      function salvarCarrinho(carrinho) {
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+      }
+
+      function atualizarCarrinho() {
+        const carrinho = carregarCarrinho();
+        let total = 0;
+        cartItemsContainer.innerHTML = "";
+
+        carrinho.forEach((item) => {
+          total += item.preco;
+          const div = document.createElement("div");
+          div.classList.add("cart-item");
+          div.innerHTML = `
+        <span>${item.nome}</span>
+        <span>R$ ${item.preco.toFixed(2)}</span>
+      `;
+          cartItemsContainer.appendChild(div);
+        });
+
+        totalElement.textContent = total.toFixed(2);
+      }
+
+      finalizarBtn.addEventListener("click", () => {
+        const carrinho = carregarCarrinho();
+        if (carrinho.length === 0) {
+          alert("Seu carrinho já está vazio!");
+          return;
+        }
+
+        alert("Compra finalizada com sucesso!");
+        localStorage.removeItem("carrinho");
+        atualizarCarrinho();
+      });
+
+      atualizarCarrinho();
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
