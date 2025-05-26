@@ -35,20 +35,38 @@ header h1 {
   background-color: #964b00;
 }
 
-/* Estiliza o conteúdo do dropdown, que aparece ao passar o mouse */
+/* Estiliza o conteúdo do dropdown com transição suave */
 .dropdowncontent {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   position: absolute;
   background-color: #f5f5dc;
   color: #964b00;
   min-width: 160px;
   box-shadow: 0px 8px 16px rgba(150, 75, 0, 0.1);
   border-radius: 10px;
+  z-index: 10;
 }
 
+/* Exibe o dropdown com animação suave */
+.dropdown:hover .dropdowncontent {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover nos links do conteúdo principal */
+#conteudo :hover {
+  background-color: #964b00;
+  color: #f5f5dc;
+  border-radius: 3px;
+}
+
+/* Hover nos itens do menu dropdown */
 .dropdown:hover a,
-a:hover,
-.dropdowncontent {
+a:hover {
   background-color: #f5f5dc;
   color: #964b00;
   border-radius: 10px;
@@ -58,24 +76,24 @@ a:hover,
 a {
   color: #f5f5dc;
   text-decoration: none;
-}
-
-.dropdowncontent,
-a {
+  transition: background-color 0.3s ease, color 0.3s ease;
   padding: 10px;
 }
 
-/* Estiliza os links dentro do dropdown */
+/* Links dentro do dropdown com transição suave */
 .dropdowncontent a {
   color: #964b00;
   padding: 10px;
   text-decoration: none;
   display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Exibe o conteúdo do dropdown quando o mouse passa por cima */
-.dropdown:hover .dropdowncontent {
-  display: block;
+/* Hover nos links do dropdown */
+.dropdowncontent a:hover {
+  background-color: #964b00;
+  color: #f5f5dc;
+  border-radius: 5px;
 }
 
 /* Padding para as seções gerais da página */
