@@ -135,12 +135,38 @@ a {
 
 /* Estiliza o formulário de cadastro */
 form {
-  max-width: 350px;
+  max-width: 500px;
   margin: 40px auto;
   padding: 15px;
   border: 1px solid #ddd;
   background-color: #f5f5dc;
   border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #964b00;
+}
+
+.form-group input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5dc;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #964b00;
+  outline: none;
 }
 
 /* Centraliza o h1 e muda a cor */

@@ -21,12 +21,12 @@
     <form>
         <h1>Cadraste seus dados</h1>
         <div class="cada_nome">
-            <label for="cadas_nome">nome</label>
+            <label for="cadas_nome">Nome</label>
             <input
             type="text"
             id="LoginNome"
             name="nome"
-            placeholder="Digite seu Email"
+            placeholder="Digite seu Nome"
             required
             />
         </div>
@@ -40,19 +40,33 @@
             required
             />
         </div>
-        <label>Cep:
-            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
-                   onblur="pesquisacep(this.value);" /></label><br />
-            <label>Rua:
-            <input name="rua" type="text" id="rua" size="60" /></label><br />
-            <label>Bairro:
-            <input name="bairro" type="text" id="bairro" size="40" /></label><br />
-            <label>Cidade:
-            <input name="cidade" type="text" id="cidade" size="40" /></label><br />
-            <label>Estado:
-            <input name="uf" type="text" id="uf" size="2" /></label><br />
-        </label>
-        <button id="Salvar" type="submit">Entrar</button>
+        <label>Endereço</label>
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input name="cep" type="text" id="cep" maxlength="9" placeholder="Digite seu CEP" onblur="pesquisacep(this.value);" />
+            </div>
+
+            <div class="form-group">
+                <label for="rua">Rua:</label>
+                <input name="rua" type="text" id="rua" placeholder="Digite sua Rua" />
+            </div>
+
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input name="bairro" type="text" id="bairro" placeholder="Digite seu Bairro" />
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input name="cidade" type="text" id="cidade" placeholder="Digite sua Cidade" />
+            </div>
+
+            <div class="form-group">
+                <label for="uf">Estado (UF):</label>
+                <input name="uf" type="text" id="uf" maxlength="2" placeholder="UF" />
+            </div>
+
+            <button id="Salvar" type="submit">Entrar</button>
     </section>
 </form>
 <script src='./java/main.js'></script>
