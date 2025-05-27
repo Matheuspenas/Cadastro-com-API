@@ -112,7 +112,7 @@ a {
 .product-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch; /* Garante altura uniforme */
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -122,31 +122,57 @@ a {
   border: 1px solid #ddd;
   color: #964b00;
   padding: 10px;
-  margin: 10px;
-  width: 200px;
+  width: 220px; /* largura fixa */
+  min-height: 380px; /* altura mínima para uniformidade */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
 }
 
 .product img {
   width: 100%;
-  height: auto;
+  height: 180px; /* força altura das imagens */
+  object-fit: cover; /* mantém proporção sem distorcer */
+  border-radius: 5px;
 }
 
-/* Centraliza os produtos e permite quebra de linha */
-.product-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.product h3 {
+  font-size: 1rem;
+  margin: 10px 0;
+  min-height: 40px; /* espaço reservado p/ títulos */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-/* botaõ adicionara ao carrinho */
+.product p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.quantidade-input {
+  width: 50px;
+  padding: 5px;
+  margin: 10px 0;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
 .add-to-cart {
   background-color: #964b00;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
