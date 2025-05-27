@@ -1,0 +1,143 @@
+/* Reset e corpo */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5dc;
+}
+
+/* Cabeçalho geral */
+header {
+  background-color: #964b00;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Título do cabeçalho */
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+/* Banner e descrição */
+.banner {
+  background-color: #964b00;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navegação principal */
+.headernavigation {
+  margin-top: 15px;
+}
+
+.headernavigation a {
+  color: #f5f5dc;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.headernavigation a:hover {
+  background-color: #f5f5dc;
+  color: #964b00;
+  border-radius: 10px;
+}
+
+/* Dropdown */
+.headernavigation .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdowncontent {
+  display: none;
+  position: absolute;
+  background-color: #964b00;
+  min-width: 120px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdowncontent {
+  display: block;
+}
+
+.dropdowncontent a {
+  display: block;
+  padding: 10px;
+}
+
+/* Container do carrinho */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do carrinho */
+.container h2 {
+  color: #964b00;
+  margin-bottom: 20px;
+}
+
+/* Item do carrinho */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item span {
+  flex: 1;
+}
+
+/* Total */
+.cart-total {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Botão finalizar */
+.checkout-btn {
+  background-color: #964b00;
+  color: #f5f5dc;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+}
+
+.checkout-btn:hover {
+  background-color: #783b00;
+}
+
+/* Botão remover */
+.remove-btn {
+  background-color: #c0392b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #96281b;
+}

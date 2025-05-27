@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f5f5dc;
+}
+
+/* Deixa o título do cabeçalho com cor branca */
+header h1 {
+  color: white;
+  background-color: #964b00;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Estiliza o banner principal com fundo escuro, cor do texto branca e centralização */
+.banner {
+  background-color: #964b00;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estiliza a navegação em dropdown (menu suspenso) */
+.headernavigation .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+a {
+  color: #f5f5dc;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px;
+}
+
+a:hover {
+  background-color: #f5f5dc;
+  color: #964b00;
+  border-radius: 10px;
+}
+
+/* Estilização da seção "Sobre" */
+.sobre {
+  max-width: 700px;
+  margin: 40px auto 60px;
+  padding: 25px 30px;
+  background-color: #f5f5dc;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(150, 75, 0, 0.1);
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border: solid #964b00 1px;
+}
+
+/* Estilo do título da seção "Sobre" */
+.sobre__texto h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #964b00;
+  text-align: center;
+}
+
+/* Parágrafo justificado e quebra automática de linha */
+.sobre__texto p {
+  text-align: justify;
+  white-space: pre-line;
+}

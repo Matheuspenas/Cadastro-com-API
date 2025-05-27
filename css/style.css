@@ -99,27 +99,34 @@ a {
 /* Padding para as seções gerais da página */
 .section {
   padding: 20px;
-  background-color: #f5f5dc; /* cor do fundo em creme */
+  background-color: #f5f5dc;
+  text-align: center;
 }
 
 .section h2 {
   color: #964b00;
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
-/* Estiliza cada produto no catálogo */
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .product {
+  background-color: white;
   border: 1px solid #ddd;
   color: #964b00;
   padding: 10px;
   margin: 10px;
-  display: inline-block;
-  align-items: center;
   width: 200px;
   text-align: center;
-  background-color: white;
 }
 
-/* Garante que a imagem do produto ocupe toda a largura do bloco */
 .product img {
   width: 100%;
   height: auto;
@@ -149,185 +156,11 @@ a {
   background-color: #783b00;
 }
 
-/* Estiliza o formulário de cadastro */
-form {
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 15px;
-  border: 1px solid #ddd;
-  background-color: #f5f5dc;
-  border-radius: 8px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #964b00;
-}
-
-.form-group input {
-  padding: 10px;
-  font-size: 14px;
+.quantidade-input {
+  width: 50px;
+  padding: 5px;
+  margin: 10px 0;
+  text-align: center;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f5f5dc;
-  transition: border-color 0.3s ease;
-}
-
-.form-group input:focus {
-  border-color: #964b00;
-  outline: none;
-}
-
-/* Centraliza o h1 e muda a cor */
-h1 {
-  text-align: center;
-  color: #964b00;
-}
-
-/* Define estilo comum para os blocos de entrada de dados do formulário */
-div[class^="cada_"] {
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Estiliza os rótulos dos campos do formulário */
-label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #964b00;
-}
-
-/* Estiliza os campos de texto */
-input[type="text"],
-input[type="number"] {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  background-color: #f5f5dc;
-}
-
-/* Adiciona uma borda mais escura quando o campo está em foco */
-input[type="text"]:focus {
-  border-color: #964b00;
-}
-
-/* Estilo do botão de envio do formulário */
-button#Salvar {
-  background-color: #964b00;
-  color: #f5f5dc;
-  padding: 12px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-}
-
-/* Efeito de hover no botão */
-button#Salvar:hover {
-  background-color: #783b00;
-}
-
-/* Estilização da seção "Sobre" */
-.sobre {
-  max-width: 700px;
-  margin: 40px auto 60px;
-  padding: 25px 30px;
-  background-color: #f5f5dc;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(150, 75, 0, 0.1);
-  text-align: center;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  border: solid #964b00 1px;
-}
-
-/* Estilo do título da seção "Sobre" */
-.sobre__texto h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #964b00;
-  text-align: center;
-}
-
-/* Parágrafo justificado e quebra automática de linha */
-.sobre__texto p {
-  text-align: justify;
-  white-space: pre-line;
-}
-
-/* CARRRINHO DE COMPRAS */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #e5ddd5;
-}
-
-header {
-  background-color: #964b00;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.container {
-  max-width: 800px;
-  margin: 30px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  color: #964b00;
-  margin-bottom: 20px;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
-}
-
-.cart-item:last-child {
-  border-bottom: none;
-}
-
-.cart-item span {
-  flex: 1;
-}
-
-.cart-total {
-  text-align: right;
-  font-weight: bold;
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-.checkout-btn {
-  background-color: #964b00;
-  color: #f5f5dc;
-  padding: 12px 20px;
-  border: none;
   border-radius: 5px;
-  cursor: pointer;
-  float: right;
-}
-
-.checkout-btn:hover {
-  background-color: #783b00;
 }
