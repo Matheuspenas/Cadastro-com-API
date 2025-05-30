@@ -66,3 +66,10 @@ a:hover {
   text-align: justify;
   white-space: pre-line;
 }
+
+footer {
+  background-color: #964b00;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

@@ -83,46 +83,76 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // cosumo de api
 
-("use strict"); //modo restrito
+'use strict'; // Modo restrito
 
-//  função para limpar formulario
+// Consumo de API ViaCEP
+// viacep.com.br
 
-const limparFormulario = (cep) => {
-  document.getElementById("cep").value = "";
-  document.getElementById("rua").value = "";
-  document.getElementById("bairro").value = "";
-  document.getElementById("cidade").value = "";
-};
-
-const preencherFormulario = (endereco) => {
-  document.getElementById("rua").value = endereco.logradouro;
-  document.getElementById("bairro").value = endereco.bairro;
-  document.getElementById("cidade").value = endereco.localidade;
-};
-
-// verifica se o cpf é valido
-const eNumero = (numero) => /^[0-9]+$/.test(numero);
-// confere se o tamnho do cep é correto
+// Verifica se o CEP é válido Teste de regex www.regexpal.com
+const eNumero = (numero) => /^[0-9]+$/.test(numero); //Expressão Regular
 const cepValido = (cep) => cep.length == 8 && eNumero(cep);
 
-// consumo de api viaCep
+// Consumo de API viaCEP
+//Consumindo API... 2- passo
+const pesquisarCep = async() => {
+    limparFormulario();
+    const url = `http://viacep.com.br/ws/${cep.value}/json/`;
+    if(cepValido(cep.value)){
+        const dados = await fetch(url); //await = esperar fetch = promessa
+        const addres = await dados.json(); 
+        
+        // hasOwnProperty  retorna um booleano indicando se o objeto possui a propriedade especificada como uma propriedade definida no próprio objeto em questão
+        if(addres.hasOwnProperty('erro')){ 
+            // document.getElementById('rua').value = 'CEP não encontrado!';
+            alert('CEP não encontrado!');
+        }else {
+            preencherFormulario(addres);
+        }
+    }else{
+        alert('CEP incorreto!');
+    } 
+}
 
-const pesquisacep = async () => {
-  limparFormulario();
-  const url = `http://viacep.com.br/ws/${cep.value}/json/`;
+// Função para limpar formulário
+function limpa_formulário_cep() {
+  document.getElementById('rua').value = "";
+  document.getElementById('bairro').value = "";
+  document.getElementById('cidade').value = "";
+  document.getElementById('uf').value = "";
+}
 
-  if (cepValido(cep.value)) {
-    const dados = await fetch(url);
-    const addres = await dados.json();
+function meu_callback(conteudo) {
+  if (!("erro" in conteudo)) {
+    document.getElementById('rua').value = conteudo.logradouro;
+    document.getElementById('bairro').value = conteudo.bairro;
+    document.getElementById('cidade').value = conteudo.localidade;
+    document.getElementById('uf').value = conteudo.uf;
+  } else {
+    limpa_formulário_cep();
+    alert("CEP não encontrado.");
+  }
+}
 
-    if (addres.hasOwnProperty("erro")) {
-      alert("CEP não encontrado");
+function pesquisacep(valor) {
+  var cep = valor.replace(/\D/g, '');
+
+  if (cep !== "") {
+    var validacep = /^[0-9]{8}$/;
+
+    if (validacep.test(cep)) {
+      document.getElementById('rua').value = "...";
+      document.getElementById('bairro').value = "...";
+      document.getElementById('cidade').value = "...";
+      document.getElementById('uf').value = "...";
+
+      var script = document.createElement('script');
+      script.src = 'https://viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+      document.body.appendChild(script);
     } else {
-      preencherFormulario(addres);
+      limpa_formulário_cep();
+      alert("Formato de CEP inválido.");
     }
   } else {
-    alert("CEP Incorreto");
+    limpa_formulário_cep();
   }
-};
-
-document.getElementById("cep").addEventListener("focusout", pesquisacep);
+}
